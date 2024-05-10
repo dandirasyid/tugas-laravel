@@ -21,7 +21,7 @@
                             <h4 class="text-center fw-bold">Edit Data Produk {{ $product->id }}</h4>
                             <div class="form-group">
                                 <label for="gambar" class="fw-bold mt-2 mb-2">Gambar Produk</label>
-                                <input type="file" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" name="gambar" aria-describedby="gambar" placeholder="Masukan gambar produk" value="{{$product->gambar}}">
+                                <input type="file" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" name="gambar" aria-describedby="gambar" placeholder="Masukan gambar produk" value="{{ old('gambar') ? old('gambar') : $product->gambar }}">
                                 @error('gambar')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nama" class="fw-bold mt-2 mb-2">Nama Produk</label>
-                                <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" name="nama" aria-describedby="nama" placeholder="Masukan nama produk" value="{{$product->nama}}">
+                                <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" name="nama" aria-describedby="nama" placeholder="Masukan nama produk" value="{{ old('nama') ? old('nama') : $product->nama }}">
                                 @error('nama')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="berat" class="fw-bold mt-2 mb-2">Berat</label>
-                                <input type="number" name="berat" class="form-control @error('berat') is-invalid @enderror" id="berat" placeholder="Masukan berat produk" value="{{$product->berat}}">
+                                <input type="number" name="berat" class="form-control @error('berat') is-invalid @enderror" id="berat" placeholder="Masukan berat produk" value="{{ old('berat') ? old('berat') : $product->berat }}">
                                 @error('berat')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="harga" class="fw-bold mt-2 mb-2">Harga</label>
-                                <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror" id="harga" placeholder="Masukan harga produk" value="{{$product->harga}}">
+                                <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror" id="harga" placeholder="Masukan harga produk" value="{{ old('harga') ? old('harga') : $product->harga }}">
                                 @error('harga')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="stok" class="fw-bold mt-2 mb-2">Stok</label>
-                                <input type="number" name="stok" class="form-control @error('stok') is-invalid @enderror" id="stok" placeholder="Masukan stok produk" value="{{$product->stok}}">
+                                <input type="number" name="stok" class="form-control @error('stok') is-invalid @enderror" id="stok" placeholder="Masukan stok produk" value="{{ old('stok') ? old('stok') : $product->stok }}">
                                 @error('stok')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -79,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi" class="fw-bold mt-2 mb-2">Deskripsi</label>
-                                <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" rows="3" placeholder="Tuliskan deskripsi produk yang akan dijual">{{$product->deskripsi}}</textarea>
+                                <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" rows="3" placeholder="Tuliskan deskripsi produk yang akan dijual">{{ old('deskripsi') ? old('deskripsi') : $product->deskripsi }}</textarea>
                                 @error('deskripsi')
                                 <div class="invalid-feedback">
                                     {{$message}}
