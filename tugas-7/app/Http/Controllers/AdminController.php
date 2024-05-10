@@ -37,7 +37,7 @@ class AdminController extends Controller {
             $product->kondisi = $request->kondisi;
             $product->deskripsi = $request->deskripsi;
             $product->save();
-            
+
             return redirect()->route('admin.index', $id);
         } catch (\Exception $e) {
             return redirect()->back()->with([
@@ -56,7 +56,7 @@ class AdminController extends Controller {
         $product = Product::findOrFail($id);
 
         if ($request->hasFile('gambar')) {
-            Storage::delete($product->gambar);
+            Storage::disk('public')->delete($product->gambar);
             $imagePath = $request->file('gambar')->store('gambar_product', 'public');
         } else {
             $imagePath = $product->gambar;
